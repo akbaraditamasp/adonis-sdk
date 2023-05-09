@@ -1,0 +1,21 @@
+{
+  "name": "akbaraditamasp/cloudpro-sdk",
+  "description": "PHP SDK for CloudPRO storage",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "CloudPRO\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Akbar Aditama",
+      "email": "akbaraditamasp@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "guzzlehttp/guzzle": "^7.5"
+  }
+}
