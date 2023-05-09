@@ -70,7 +70,7 @@ class CloudPRO
         ])->getBody()->getContents(), TRUE);
     }
 
-    public static function storeNode(string $name, string $path, array $options = [])
+    public static function storeFile(string $name, string $path, array $options = [])
     {
         $preparedOptions = array_map(function ($option, $key) {
             return [
