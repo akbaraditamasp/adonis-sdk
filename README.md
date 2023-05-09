@@ -4,14 +4,6 @@ This library is the abstraction of CloudPRO API for access from applications wri
 
 ## Installation
 
-`composer require akbaraditamasp/cloudpro-sdk`
-
-# CloudPRO PHP SDK
-
-This library is the abstraction of CloudPRO API for access from applications written with PHP.
-
-## Installation
-
 ```bash
 composer require akbaraditamasp/cloudpro-sdk
 ```
