@@ -1,6 +1,6 @@
 {
   "name": "akbaraditamasp/cloudpro-php",
-  "description": "PHP SDK for CloudPRO storage",
+  "description": "PHP Library for CloudPRO Storage System",
   "type": "library",
   "license": "MIT",
   "autoload": {
