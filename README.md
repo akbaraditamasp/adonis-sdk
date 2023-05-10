@@ -1,11 +1,11 @@
-# CloudPRO PHP SDK
+# CloudPRO PHP
 
 This library is the abstraction of CloudPRO API for access from applications written with PHP.
 
 ## Installation
 
 ```bash
-composer require akbaraditamasp/cloudpro-sdk
+composer require akbaraditamasp/cloudpro-php
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ Use the **_box token_** that you got when you made the box.
 $response = CloudPRO::begin()->useBoxToken("BOX TOKEN")->storeFolder("FOLDER NAME", $options);
 ```
 
-### Create Node
+### Store File
 
 ```php
 $response = CloudPRO::begin()->useBoxToken("BOX TOKEN")->storeFile("FILE NAME", "PATH", $options);
