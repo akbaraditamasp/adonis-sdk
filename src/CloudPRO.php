@@ -75,7 +75,7 @@ class CloudPRO
 
     public static function storeFile(string $name, $path, array $options = [])
     {
-        $contents = $path instanceof UploadedFileInterface ? $path->getStream()->getContents() : ($path instanceof StreamInterface ? $path->getContents() : null);
+        $contents = $path instanceof UploadedFileInterface ? $path->getStream() : ($path instanceof StreamInterface ? $path : null);
         if(!$contents) {
             throw new \Error("Contents not found");
         }
@@ -98,7 +98,7 @@ class CloudPRO
                 ],
                 [
                     "name" => "file",
-                    "contents" => Utils::tryFopen($path, "r"),
+                    "contents" => Utils::streamFor($path, "r"),
                 ],
                 ...$preparedOptions
             ]
