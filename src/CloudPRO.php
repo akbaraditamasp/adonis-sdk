@@ -1,8 +1,11 @@
 <?php
+
 namespace CloudPRO;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Utils;
+use Psr\Http\Message\StreamInterface;
+use Psr\Http\Message\UploadedFileInterface;
 
 class CloudPRO
 {
@@ -65,13 +68,18 @@ class CloudPRO
                 "PRO-Box-Token" => self::$boxToken
             ],
             "form_params" => [
-                "name" => $name,
-            ] + $options
+                    "name" => $name,
+                ] + $options
         ])->getBody()->getContents(), TRUE);
     }
 
-    public static function storeFile(string $name, string $path, array $options = [])
+    public static function storeFile(string $name, $path, array $options = [])
     {
+        $contents = $path instanceof UploadedFileInterface ? $path->getStream()->getContents() : ($path instanceof StreamInterface ? $path->getContents() : null);
+        if(!$contents) {
+            throw new \Error("Contents not found");
+        }
+
         $preparedOptions = array_map(function ($option, $key) {
             return [
                 "name" => $key,
