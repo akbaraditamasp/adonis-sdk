@@ -73,7 +73,7 @@ class CloudPRO
         ])->getBody()->getContents(), TRUE);
     }
 
-    public static function storeFile(string $name, $path, array $options = [])
+    public static function storeFile(string $name, $path, array $options = [], array $fileOptions = [])
     {
         $contents = $path instanceof UploadedFileInterface ? $path->getStream() : $path;
 
@@ -96,7 +96,7 @@ class CloudPRO
                 [
                     "name" => "file",
                     "contents" => Utils::streamFor($contents),
-                ],
+                ] + $fileOptions,
                 ...$preparedOptions
             ]
         ])->getBody()->getContents(), TRUE);
