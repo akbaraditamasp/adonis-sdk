@@ -137,7 +137,7 @@ class CloudPRO
         ])->getBody()->getContents(), TRUE);
     }
 
-    public static function storeBox(string $name)
+    public static function storeBox(string $name, int $limit = 0)
     {
         return json_decode(self::$client->post("app/box", [
             "headers" => [
@@ -145,6 +145,7 @@ class CloudPRO
             ],
             "form_params" => [
                 "name" => $name,
+                "limit" => $limit
             ]
         ])->getBody()->getContents(), TRUE);
     }
