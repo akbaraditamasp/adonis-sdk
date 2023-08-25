@@ -17,7 +17,7 @@ class CloudPRO
     public function __construct()
     {
         self::$client = new Client([
-            'base_uri' => 'https://www.idprocloud.com/api/v1/',
+            'base_uri' => 'https://cloudpro.akbaraditama.my.id/api/v1/',
         ]);
     }
 
@@ -68,8 +68,8 @@ class CloudPRO
                 "PRO-Box-Token" => self::$boxToken
             ],
             "form_params" => [
-                    "name" => $name,
-                ] + $options
+                "name" => $name,
+            ] + $options
         ])->getBody()->getContents(), TRUE);
     }
 
